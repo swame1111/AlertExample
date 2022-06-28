@@ -3,14 +3,14 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AlertExample": {
+    "solwizfe": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         },
         "@schematics/angular:application": {
-          "strict": true
+          "strict": false
         }
       },
       "root": "",
@@ -20,33 +20,47 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/alert-example",
+            "outputPath": "dist/solwizfe",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ids-enterprise/dist/css",
+                "output": "/assets/ids-enterprise/css"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ids-enterprise/dist/js/cultures",
+                "output": "/assets/ids-enterprise/js/cultures"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/d3/dist/d3.js",
+              "node_modules/ids-enterprise/dist/js/sohoxi.js",
+              "node_modules/lscache/lscache.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
                 }
               ],
               "fileReplacements": [
@@ -72,10 +86,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AlertExample:build:production"
+              "browserTarget": "solwizfe:build:production"
             },
             "development": {
-              "browserTarget": "AlertExample:build:development"
+              "browserTarget": "solwizfe:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AlertExample:build"
+            "browserTarget": "solwizfe:build"
           }
         },
         "test": {
@@ -93,19 +108,34 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ids-enterprise/dist/css",
+                "output": "/assets/ids-enterprise/css"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ids-enterprise/dist/js/cultures",
+                "output": "/assets/ids-enterprise/js/cultures"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/d3/dist/d3.js",
+              "node_modules/ids-enterprise/dist/js/sohoxi.js",
+              "node_modules/ids-enterprise/dist/js/cultures/en-US.js",
+              "node_modules/lscache/lscache.js"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "AlertExample"
+  "defaultProject": "solwizfe"
 }

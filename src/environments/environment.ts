@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  environmentName: '***ISW-Local***',
+  backendBaseUrl: 'https://localhost:40443',
+  questionnairID:"0694e47c-aab4-4bcc-a928-ab4464074464",
+  Level1:"Demand to Plan",
+  Level2:"Demand Forecasting & Planning"
 };
 
 /*

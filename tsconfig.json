@@ -4,29 +4,52 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "strict": false,
+    "noImplicitOverride": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true,
+    "importHelpers": true,  
     "target": "es2017",
     "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types",
+      "./dist"
+    ],
+    "types": [
+      "jasmine",
+      "jquery",
+      "node",
+      "ids-enterprise-typings"
+    ],
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ids-enterprise-ng": [
+        "dist/ids-enterprise-ng/ids-enterprise-ng",
+        "dist/ids-enterprise-ng"
+      ],
+      "ids-enterprise-ng/*": [
+        "dist/ids-enterprise-ng/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false
+  },
+  "exclude": [
+    "dist/**"
+  ]
 }

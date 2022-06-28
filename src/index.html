@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AlertExample</title>
+  <title>Infor Solution Wizard</title>
   <base href="/">
+
+  <script>
+    window['SohoConfig'] = { renderLoop: { noAutoStart: true }};
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" id="stylesheet" href="assets/ids-enterprise/css/theme-new-light.css" type="text/css">
+  <!-- <link rel="stylesheet" id="stylesheet" href="/node_modules/ids-enterprise/dist/css/theme-new-light.css" type="text/css"> -->
+
+  <style type="text/css">
+    #chart-container { height: 500px; }
+    .orgchart.edit-state .edge { display: none; }
+    .orgchart .node .title { height: 30px; line-height: 30px; }
+    #new-nodelist {
+      display: inline-block;
+      list-style:none;
+      margin-top: -0.5rem;
+      padding: 0;
+      vertical-align: text-top;
+    }
+    #new-nodelist>* { padding-bottom: 4px; }
+        </style>
 </head>
 <body>
   <app-root></app-root>
 </body>
+
 </html>

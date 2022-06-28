@@ -1,0 +1,19 @@
+{
+
+     "/User/*":
+    {
+        "target":"https://localhost:40443/",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    },
+        "/Questionnaire/*":
+    {
+        "target":"https://localhost:40443/",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    }
+   
+    
+}
